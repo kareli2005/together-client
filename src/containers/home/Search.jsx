@@ -21,7 +21,7 @@ const Search = () => {
         { id: 3, username: 'Search3', email: 'Search3', picture: 'Search3', online: false },
       ])
     } else if (!searchWord) {
-      setDefaultText('Searched users will appear here')
+      setDefaultText('Searched users will appear here...')
       showError('')
     } else {
       showError('No users found')
