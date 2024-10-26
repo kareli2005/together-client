@@ -67,7 +67,7 @@ const Welcome = () => {
   }
 
   return (
-    <div className='w-full max-w-[240px] flex flex-col items-start justify-center text-[#0074d9] gap-2 auth-container-enter'>
+    <div className='w-full max-w-[300px] md:max-w-[240px] flex flex-col items-start justify-center text-[#0074d9] gap-2 auth-container-enter'>
       <p className='font-bold p-2'>Get Started</p>
 
       <form onSubmit={(e) => {
