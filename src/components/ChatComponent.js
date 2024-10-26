@@ -2,9 +2,9 @@ import React from 'react'
 
 const ChatComponent = ({chat}) => {
   return (
-    <div className='w-full bg-white rounded-xl p-4 flex gap-4 cursor-pointer relative shadow-lg shadow-gray-300'>
-      <div>
-        <img src={chat.user.picture} alt="/userProfile" className='w-14 h-14 rounded-lg bg-slate-400' />
+    <div className='w-full bg-white rounded-xl p-4 flex gap-4 cursor-pointer relative shadow-lg shadow-gray-300 hover:bg-slate-100 duration-300'>
+      <div className='max-h-14 max-w-14 w-full h-full'>
+        <img src={chat.user.picture} alt="/userProfile" className='w-full h-full rounded-lg bg-slate-400 object-cover shadow-md shadow-gray-300' />
       </div>
       <div className='w-full flex flex-col justify-between'>
         <p className='font-bold text-[#0074d9] md:text-lg'>{chat.user.email}</p>

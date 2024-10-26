@@ -1,7 +1,9 @@
-import React from 'react'
-import ChatComponent from '../../components/ChatComponent';
+import React, { useEffect, useRef, useState } from 'react'
+import ChatComponent from '../../components/ChatComponent'
 
 const Chats = () => {
+  const [hasScrollbar, setHasScrollbar] = useState(false)
+  const containerRef = useRef(null)
 
   const chatsData = [
     {
@@ -185,11 +187,16 @@ const Chats = () => {
       sender: 'Nick Blue'
     }
   ];
-  
-  
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (container) setHasScrollbar(container.scrollHeight > container.clientHeight)
+  }, [chatsData])
 
   return (
-    <div className='w-full h-full rounded-xl home-container-enter flex flex-col gap-4 overflow-y-auto scrollbar-thin scrollbar-webkit pr-3'>
+    <div ref={containerRef}
+      className={`w-full h-full rounded-xl home-container-enter flex flex-col gap-4 overflow-y-auto scrollbar-thin scrollbar-webkit ${hasScrollbar ? 'pr-4' : ''}`}
+    >
       {chatsData.map((chat, key) => (
         <ChatComponent chat={chat} key={key} />
       ))}
