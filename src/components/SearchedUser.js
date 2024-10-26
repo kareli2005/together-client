@@ -2,7 +2,7 @@ import React from 'react'
 
 const SearchedUser = ({user}) => {
   return (
-    <div className='w-full bg-white rounded-xl p-4 flex gap-4 cursor-pointer relative shadow-lg shadow-gray-300'>
+    <div className='w-full bg-white rounded-xl p-4 flex gap-4 cursor-pointer relative shadow-lg shadow-gray-300 hover:bg-slate-100 duration-300'>
       <div>
         <img src={user.picture} alt="/userProfile" className='w-14 h-14 rounded-lg bg-slate-400' />
       </div>
